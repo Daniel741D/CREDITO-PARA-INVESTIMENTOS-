@@ -10,6 +10,28 @@
         .form-container { background: #f8f9fa; padding: 20px; border-radius: 8px; }
         input, select, button { width: 100%; padding: 10px; margin: 5px 0; }
         button { background: #007bff; color: white; border: none; cursor: pointer; }
+        
+        /* Estilos para o destaque da área de investimento */
+        label[for="area"] {
+            font-size: 1.2em;
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 20px;
+            display: block;
+        }
+
+        select#area {
+            background-color: #e9ecef;
+            border: 2px solid #007bff;
+            font-size: 1.1em;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #343a40;
+        }
     </style>
 </head>
 <body>
@@ -39,7 +61,13 @@
                     <option value="">Selecione o Valor Desejado</option>
                     <option value="100000">R$ 100.000</option>
                     <option value="200000">R$ 200.000</option>
+                    <option value="300000">R$ 300.000</option>
+                    <option value="400000">R$ 400.000</option>
                     <option value="500000">R$ 500.000</option>
+                    <option value="600000">R$ 600.000</option>
+                    <option value="700000">R$ 700.000</option>
+                    <option value="800000">R$ 800.000</option>
+                    <option value="900000">R$ 900.000</option>
                     <option value="1000000">R$ 1.000.000</option>
                 </select>
                 
@@ -59,7 +87,8 @@
             var area = document.getElementById("area").value;
             var valor = document.getElementById("valor").value;
 
-            var mensagem = encodeURIComponent(`*Solicitação de Crédito para Investimento*\n\nNome: ${nome}\nE-mail: ${email}\nTelefone: ${telefone}\nÁrea de Investimento: ${area}\nValor Desejado: R$ ${valor}`);
+            // Mensagem que será enviada
+            var mensagem = encodeURIComponent(`Tenho interesse em Crédito para Investimento\n\n*Solicitação de Crédito para Investimento*\n\nNome: ${nome}\nE-mail: ${email}\nTelefone: ${telefone}\nÁrea de Investimento: ${area}\nValor Desejado: R$ ${valor}`);
 
             var url = `https://wa.me/5598984699652?text=${mensagem}`;
 
