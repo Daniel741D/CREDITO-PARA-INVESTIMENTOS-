@@ -1,4 +1,4 @@
-<______>
+<_____>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -123,6 +123,11 @@
 
         <button type="button" onclick="enviarFormulario()">Solicitar Crédito</button>
     </form>
+
+    <!-- Mensagem de confirmação -->
+    <div id="mensagemConfirma" style="display: none; margin-top: 20px; color: #28a745;">
+        A minha equipe vai entrar em contato com você!
+    </div>
 </div>
 
 <!-- Firebase SDK -->
@@ -203,7 +208,7 @@
             data_registro: new Date()
         })
         .then(() => {
-            alert("A minha equipe vai entrar em contato com você!");
+            document.getElementById("mensagemConfirma").style.display = "block"; // Exibir a mensagem de confirmação
             document.getElementById("creditoForm").reset(); // Resetar o formulário após o envio
         })
         .catch((error) => {
